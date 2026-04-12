@@ -6,15 +6,27 @@ import (
 
 type HostelName string
 const (
-	// mention all hostel names
+	KBH 		HostelName = "Kailash Boys Hostel"
+	HBH 	 	HostelName = "Himadri Boys Hostel"
+	HimgiriBH	HostelName = "Himgiri Boys Hostel"
+	UBH 		HostelName = "Udaygiri Boys Hostel"
+	NBH 		HostelName = "Neelkanth Boys Hostel"
+	DBH 		HostelName = "Dhauladhar Boys Hostel"
+	VBH 		HostelName = "Vindhyachal Boys Hostel"
+	SBH 		HostelName = "Shivalik Boys Hostel"
+	SAT 		HostelName = "Satpura Hostel"
+	AGH 		HostelName = "Ambika Girls Hostel"
+	PGH 		HostelName = "Parvati Girls Hostel"
+	MGH 		HostelName = "Mani-Mahesh Girls Hostel"
+	ARG 		HostelName = "Aravali Girls Hostel"
 )
 
 type Warden struct {
 	ID					uint			`gorm:"primaryKey;autoIncrement"`
 	Name				string			`gorm:"not null"`
-	Email				string			`gorm:"uniqueIndex; not null"`
-	Hostel				HostelName		`gorm:"type:text; not null"`
-	PhoneNumber			string			`gorm:"uniqueIndex; not null"`
+	Email				string			`gorm:"uniqueIndex;not null"`
+	Hostel				HostelName		`gorm:"type:text;not null"`
+	PhoneNumber			string			`gorm:"type:char(10);uniqueIndex;not null"`
 	IsVerified			bool			`gorm:"default:false"`
 	CreatedAt			time.Time
 }
