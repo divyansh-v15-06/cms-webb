@@ -23,6 +23,7 @@ const (
 	Type5 BlockType = "5"
 )
 
+// set one enumerated type for department as well
 
 type Faculty struct {
 	ID					uint  			`gorm:"primaryKey;autoIncrement"`
