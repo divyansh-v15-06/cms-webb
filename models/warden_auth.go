@@ -8,7 +8,7 @@ type HostelName string
 const (
 	KBH 		HostelName = "Kailash Boys Hostel"
 	HBH 	 	HostelName = "Himadri Boys Hostel"
-	HimgiriBH	HostelName = "Himgiri Boys Hostel"
+	Himgiri		HostelName = "Himgiri Boys Hostel"
 	UBH 		HostelName = "Udaygiri Boys Hostel"
 	NBH 		HostelName = "Neelkanth Boys Hostel"
 	DBH 		HostelName = "Dhauladhar Boys Hostel"
@@ -25,7 +25,7 @@ type Warden struct {
 	ID					uint			`gorm:"primaryKey;autoIncrement"`
 	Name				string			`gorm:"not null"`
 	Email				string			`gorm:"uniqueIndex;not null"`
-	Hostel				HostelName		`gorm:"type:text;not null"`
+	Hostel				HostelName		`gorm:"type:varchar(30);not null"`
 	PhoneNumber			string			`gorm:"type:char(10);uniqueIndex;not null"`
 	IsVerified			bool			`gorm:"default:false"`
 	CreatedAt			time.Time
